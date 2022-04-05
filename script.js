@@ -1,4 +1,49 @@
 // Get the modal
+var cmodal = document.getElementById("cModal");
+var mernmodal = document.getElementById("mernModal");
+var dsamodal = document.getElementById("dsaModal");
+var cpmodal = document.getElementById("cpModal");
+
+// Get the button that opens the modal
+var cbtn = document.getElementById("c");
+var mernbtn = document.getElementById("mern");
+var dsabtn = document.getElementById("dsa");
+var cpbtn = document.getElementById("cp");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("step-close");
+var clbtn = document.getElementsByClassName("close-btn");
+
+// When the user clicks the button, open the modal
+cbtn.onclick = function () {
+  cmodal.style.display = "block";
+};
+mernbtn.onclick = function () {
+  mernmodal.style.display = "block";
+};
+cpbtn.onclick = function () {
+  cpmodal.style.display = "block";
+};
+dsabtn.onclick = function () {
+  dsamodal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+for (var j = 0; j < 4; j++) {
+  span[j].addEventListener("click", function () {
+    cmodal.style.display = "none";
+    mernmodal.style.display = "none";
+    dsamodal.style.display = "none";
+    cpmodal.style.display = "none";
+  });
+  clbtn[j].addEventListener("click", function () {
+    cmodal.style.display = "none";
+    mernmodal.style.display = "none";
+    dsamodal.style.display = "none";
+    cpmodal.style.display = "none";
+  });
+}
+
 var log = document.getElementById("log");
 var sign = document.getElementById("sign");
 var logclose = document.getElementById("log-close");
@@ -50,6 +95,18 @@ window.onclick = function (event) {
   if (event.target == log) {
     log.style.display = "none";
     history.back();
+  }
+  if (event.target == cmodal) {
+    cmodal.style.display = "none";
+  }
+  if (event.target == cpmodal) {
+    cpmodal.style.display = "none";
+  }
+  if (event.target == mernmodal) {
+    mernmodal.style.display = "none";
+  }
+  if (event.target == dsamodal) {
+    dsamodal.style.display = "none";
   }
 };
 
@@ -222,18 +279,7 @@ for (var i = 0; i < 4; i++) {
     $(this).toggleClass("active-query", 500);
   });
 }
-/****************************change************************/
 
-function video_open() {
-  var lightBoxVideo = document.getElementById("TutedudeVideo");
-  lightBoxVideo.style.display = "inline";
-  document.getElementById("thumbnail").style.display = "none";
-  document.getElementById("video-button").style.padding = "0";
-  document.getElementById("video-button").style.background = "transparent";
-  lightBoxVideo.play();
-}
-
-/******************course step**************** */
 var coll = document.getElementsByClassName("collapsible");
 var i;
 

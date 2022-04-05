@@ -688,9 +688,9 @@ main p {
 .step div {
   position: relative;
 }
-.step button {
+.step .i {
   position: absolute;
-  transform: translate(-50%, -14%);
+  transform: translate(-50%, 0%);
   border-radius: 50%;
   height: 3.8rem;
   width: 3.8rem;
@@ -699,8 +699,8 @@ main p {
   border: 0.1rem solid white;
   background: linear-gradient(180deg, #0f0e0f 0%, #7e267e 100%);
 }
-.step a {
-  padding: 0.65rem 0.65rem 0.65rem 2.6rem;
+.step .view {
+  padding: 0.35rem 0.65rem 0.35rem 2.6rem;
   color: white;
   font-size: 1.8rem;
   font-weight: 500;
@@ -719,11 +719,140 @@ main p {
   );
   border-radius: 0px 10px 10px 0px;
 }
+
+.step-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999999999; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.step-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+
+  border: 1px solid #888;
+  width: 80%;
+  color: #3a30aa;
+  border-radius: 2rem;
+}
+.step-modal-content .curriculum-name {
+  padding: 1rem 2rem;
+  justify-content: space-between !important;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: left;
+  box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
+}
+.step-modal-content .curriculum {
+  padding: 2rem 2rem 1rem;
+}
+/* The Close Button */
+.step-close {
+  color: #e00606b0;
+  font-size: 4.8rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+.step-close:hover,
+.step-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close-btn {
+  margin-bottom: 2rem;
+  background-color: #e00606b0;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  font-weight: 400;
+  border: none;
+}
+/******************************************/
+.each-step {
+  cursor: pointer;
+  background-color: #f1f1f1;
+  text-align: left;
+  font-weight: 500;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+}
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  border: none;
+  color: #800080;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  text-align: left;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active {
+  border-radius: 2rem 2rem 0 0;
+}
+.collapsible:after {
+  content: "\002B";
+  background: linear-gradient(to bottom, #b671cf, #800080);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  float: right;
+  margin-top: -4px;
+  width: 3rem;
+  height: 3rem;
+  font-size: 3.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.active:after {
+  content: "\2212";
+}
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0rem 4rem;
+  max-height: 0;
+  font-size: 1.6rem;
+  transition: all 0.2s ease-out;
+  overflow: hidden;
+  box-shadow: none !important;
+  /* background-color: #f1f1f1; */
+}
+.content .disFlex {
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.content ion-icon {
+  fill: #3a30aa;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.content p {
+  width: 90%;
+}
+/****************collapsible************************/
+
 .map {
   max-width: 70%;
 }
 
-.border {
+.border-cover {
   margin: 6rem auto 8rem;
   height: 10rem;
   width: 85vw;
@@ -1408,7 +1537,9 @@ footer a {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
-    gap: 2rem;
+    gap: 3rem;
+    width: 35rem;
+    margin: 0 auto;
   }
 
   .recipe .card {
@@ -1465,7 +1596,7 @@ footer a {
     display: none;
   }
 
-  .border {
+  .border-cover {
     height: auto;
     border: none;
     flex-direction: column;
