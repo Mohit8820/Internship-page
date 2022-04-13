@@ -350,7 +350,8 @@ button:active {
 header {
   padding: 1rem 10rem;
   box-shadow: rgb(0, 0, 0, 25%) 0px 4px 5px;
-  margin-bottom: 2rem;
+  position: relative;
+  z-index: 9999;
 }
 header nav {
   font-size: 1.6rem;
@@ -415,6 +416,81 @@ h1.gradText {
   margin-bottom: 2.5rem;
 }
 /********************************************/
+
+.premain {
+  background-image: url("bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 18rem;
+  z-index: -9999;
+}
+.alumni {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  letter-spacing: 0.01em;
+  color: #800080;
+  width: 38.2rem;
+  height: 7.6rem;
+  background: #ffffff;
+  box-shadow: 0px 0.5px 4px 2.5px rgba(145, 27, 186, 0.06);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.premain h1 {
+  color: #000;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 7.5rem;
+  text-align: left;
+  margin-bottom: 3rem;
+}
+.det-cont {
+  width: 72rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+}
+.details {
+  width: 16rem;
+  height: 16rem;
+  background: #fcf9f9;
+  box-shadow: -3px 3px 30px rgba(255, 95, 95, 0.1);
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+}
+.l1 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: #000000;
+}
+.l2 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 121.5%;
+  background: linear-gradient(176.18deg, #800080 -2.53%, #7e267e 27.29%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.l3 {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 main {
   position: relative;
 }
@@ -446,7 +522,7 @@ main p {
   width: 18rem;
   position: absolute;
   right: 0;
-  z-index: -999;
+  top: -9.5rem;
 }
 .semicircle {
   width: 11rem;
@@ -661,12 +737,12 @@ main p {
 }
 .steps {
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 .step {
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   width: 36rem;
-  height: 10rem;
+  height: 18rem;
   background: linear-gradient(
     312.75deg,
     rgba(255, 155, 155, 0.17) 5.04%,
@@ -674,11 +750,23 @@ main p {
     rgba(128, 0, 128, 0.17) 107.92%
   );
   border-radius: 10px;
+}
+.step-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 .step p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  text-align: justify;
+  color: #000000;
+  width: 95%;
+  margin: 0 auto;
+}
+.step-flex p {
   text-align: left;
   font-weight: 600;
   font-size: 2.4rem;
@@ -854,7 +942,7 @@ main p {
 
 .border-cover {
   margin: 6rem auto 8rem;
-  height: 10rem;
+  height: 24rem;
   width: 85vw;
   border: 0.1rem solid rgba(128, 0, 128, 0.17);
   border-radius: 15px;
@@ -866,10 +954,11 @@ main p {
 }
 .perks {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 35.9rem;
-  height: 6rem;
+  width: 35.9rem;
+  height: 18rem;
   background: linear-gradient(
     312.75deg,
     rgba(255, 155, 155, 0.17) 5.04%,
@@ -883,40 +972,45 @@ main p {
 
   color: #7e267e;
 }
+.perks p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 121%;
+  text-align: justify;
+  color: #000000;
+  width: 85%;
+  margin: 1.5rem auto;
+}
 
 .rewardz {
-  background: linear-gradient(
-    0.97deg,
-    #f6d5f7 0.79%,
-    rgba(251, 233, 215, 0) 117.55%
-  );
   padding-bottom: 4rem;
 }
 .grid-rewards {
-  width: 96.6rem;
+  width: 126rem;
   margin: 1rem auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2rem;
 }
 .reward {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 2rem;
-  width: 28.2rem;
-  height: 28.2rem;
+  justify-content: space-between;
+  padding: 1.5rem 0 4rem;
+  gap: 1.5rem;
+  width: 19rem;
+  height: 19rem;
   background: #ffffff;
-  box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0.5px 10px 1.5px rgba(165, 130, 179, 0.22);
   border-radius: 10px;
   color: rgba(63, 55, 201, 0.74);
   font-weight: 500;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
 }
 .reward img {
-  width: 14.4rem;
+  width: 8.5rem;
 }
 
 .prog-scope {
@@ -926,66 +1020,36 @@ main p {
   justify-content: center;
   gap: 3rem;
   margin: 2rem auto;
-  position: relative;
-  overflow: scroll;
-  z-index: 999999;
 }
-.prog-scope .disFlex::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  width: 100vw;
-  height: 6rem;
-  background: linear-gradient(
-    90.24deg,
-    rgba(63, 55, 201, 0.74) -11.5%,
-    rgba(177, 66, 64, 0.53) 169.22%
-  );
-  z-index: -8;
-}
+
 .scope {
-  position: relative;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 30rem;
-  height: 34.8rem;
+  width: 35.8rem;
+  height: 17rem;
   background: linear-gradient(
-    355.69deg,
-    rgba(63, 55, 201, 0.74) 0.29%,
-    rgba(177, 66, 64, 0.53) 108.12%
+    312.75deg,
+    rgba(255, 155, 155, 0.17) 5.04%,
+    rgba(203, 35, 109, 0.17) 39.16%,
+    rgba(128, 0, 128, 0.17) 107.92%
   );
-  border-radius: 10px;
+  box-shadow: 0px 0.5px 4px rgba(226, 141, 141, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  text-align: left;
 }
-.scope::before {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.273);
-  height: 6rem;
-  width: 30rem;
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-}
+
 .scope h2 {
   font-weight: 700;
-  font-size: 3rem;
-  line-height: 4.5rem;
-  color: #f7deff;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
 }
-.scope img {
-  width: 12.9rem;
-  height: 12.9rem;
-}
+
 .scope p {
   font-weight: 500;
-  font-size: 1.4rem;
-  line-height: 2.1rem;
-  text-align: justify;
-
-  color: #ffe8db;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #323232;
 }
 
 .companies .a {
@@ -1038,6 +1102,7 @@ main p {
 }
 
 .hear .gradText {
+  margin-top: 5rem;
   margin-bottom: 0;
 }
 .others {
@@ -1049,7 +1114,7 @@ main p {
   margin: 2rem 1rem;
   background-color: white;
   width: 38rem;
-  height: 34rem;
+  height: 36rem;
   font-size: 1.6rem;
   position: relative;
 }
@@ -1507,9 +1572,18 @@ footer a {
   .mview {
     display: inline;
   }
+  .premain {
+    padding: 7rem 4rem 6rem;
+  }
+
+  .det-cont {
+    grid-template-columns: 1fr 1fr;
+    width: 32rem;
+    margin: auto;
+  }
   .gear {
     width: 9rem;
-    top: 1rem;
+    top: -3.5rem;
   }
   .semicircle {
     width: 7rem;
@@ -1517,7 +1591,7 @@ footer a {
   }
   main p {
     text-align: center;
-    margin-top: 8rem;
+    margin-top: 5rem;
   }
   main .disFlex {
     flex-direction: column;
@@ -1606,7 +1680,7 @@ footer a {
   }
   .perks {
     width: 35.9rem;
-    height: 10rem;
+    height: 18rem;
     position: relative;
   }
   .perks::before {
@@ -1624,19 +1698,14 @@ footer a {
   }
 
   .grid-rewards {
-    grid-template-columns: 1fr;
-    width: 28.2rem;
+    grid-template-columns: 1fr 1fr;
+    width: 40.2rem;
   }
 
   .prog-scope .disFlex {
-    padding-left: 4rem;
-    padding-right: 4rem;
-    justify-content: flex-start;
+    flex-direction: column;
   }
-  .prog-scope .disFlex::before,
-  .scope::before {
-    display: none;
-  }
+
   .scope {
     min-width: 30rem;
   }
@@ -1651,7 +1720,7 @@ footer a {
     height: 40rem;
   } */
   .others {
-    height: 35rem;
+    height: 36rem;
   }
   #frame {
     width: 43rem;
@@ -1749,7 +1818,23 @@ footer a {
     width: 4rem;
     margin-left: 1rem;
   }
-
+  .premain h1 {
+    font-size: 4rem;
+    line-height: 5.4rem;
+    width: 90%;
+    margin-top: 5rem;
+  }
+  .alumni {
+    width: 100%;
+  }
+  .det-cont {
+    width: 38rem;
+    gap: 3rem;
+  }
+  .details {
+    width: 17rem;
+    height: 17rem;
+  }
   #frame1:checked ~ #controls label:nth-last-child(1),
   #frame2:checked ~ #controls label:nth-last-child(4),
   #frame3:checked ~ #controls label:nth-last-child(3),
